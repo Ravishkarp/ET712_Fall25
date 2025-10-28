@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pre-K Learning Fun | Created by Ravishkar Premanand</title>
 
   <style>
     body {
       font-family: "Comic Sans MS", sans-serif;
       background-color: #fff8e1;
-      text-align: center;
+      color: #333;
       margin: 0;
+      text-align: center;
+      scroll-behavior: smooth;
     }
 
     header {
-      background-color: #ffcc80;
+      background-color: #d780ff;
       padding: 20px;
     }
 
     header h1 {
-      color: #4e342e;
       margin: 0;
+      color: #4e342e;
     }
 
     nav ul {
@@ -31,13 +31,12 @@
       justify-content: center;
       gap: 15px;
       padding: 0;
-      margin-top: 10px;
       flex-wrap: wrap;
     }
 
     nav a {
       text-decoration: none;
-      background-color: #ffb6c1;
+      background-color: #861223;
       color: white;
       padding: 10px 20px;
       border-radius: 10px;
@@ -47,8 +46,230 @@
     nav a:hover {
       background-color: #ff69b4;
     }
+
+    section {
+      padding: 40px 20px;
+      border-bottom: 3px dotted #ffe082;
+    }
+
+    h2 {
+      color: #5d4037;
+    }
+
+    /* ========== COLORS ========== */
+    #colorGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 15px;
+      justify-items: center;
+      margin-top: 20px;
+    }
+
+    .color-box {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    #colorName, #shapeName {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    /* ========== ANIMALS ========== */
+    .animal-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .animal {
+      width: 120px;
+      height: 120px;
+      border-radius: 15px;
+      background-color: #c8e6c9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2em;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    .animal:hover {
+      transform: scale(1.1);
+    }
+
+    #animalImage {
+      display: none;
+      margin-top: 20px;
+      max-width: 200px;
+      border-radius: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    /* ========== SHAPES ========== */
+    .shapes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .shape {
+      width: 100px;
+      height: 100px;
+      background-color: #90caf9;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+    }
+
+    .shape:hover {
+      transform: scale(1.1);
+    }
+
+    .circle {
+      border-radius: 50%;
+      background-color: #f48fb1;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 100px solid #ffcc80;
+      background: none;
+    }
+
+    .rectangle {
+      width: 140px;
+      height: 80px;
+      background-color: #aed581;
+    }
+
+    .star {
+      position: relative;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-right: 50px solid transparent;
+      border-bottom: 35px solid #ffeb3b;
+      border-left: 50px solid transparent;
+      transform: rotate(35deg);
+    }
+
+    .star:before {
+      content: "";
+      position: absolute;
+      top: -22px;
+      left: -32px;
+      width: 0;
+      height: 0;
+      border-right: 30px solid transparent;
+      border-bottom: 40px solid #ffeb3b;
+      border-left: 30px solid transparent;
+      transform: rotate(-35deg);
+    }
+
+    .heart {
+      position: relative;
+      width: 100px;
+      height: 90px;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      left: 50px;
+      top: 0;
+      width: 50px;
+      height: 80px;
+      background: #e57373;
+      border-radius: 50px 50px 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+
+    .heart:after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+
+    .diamond {
+      width: 80px;
+      height: 80px;
+      background-color: #ba68c8;
+      transform: rotate(45deg);
+    }
+
+    .oval {
+      width: 120px;
+      height: 70px;
+      background-color: #4dd0e1;
+      border-radius: 50%;
+    }
+
+    /* ========== TRANSPORTATION ========== */
+    .vehicle-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .vehicle {
+      width: 120px;
+      height: 120px;
+      background-color: #ffe0b2;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      background-color: #ffd54f;
+      padding: 10px;
+    }
+
+    #toTop {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+    }
+
+    #toTop:hover {
+      background-color: #388e3c;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <h1>🌈 Pre-K Learning Fun</h1>
@@ -58,15 +279,130 @@
         <li><a href="#colors">Colors</a></li>
         <li><a href="#animals">Animals</a></li>
         <li><a href="#shapes">Shapes</a></li>
-        <li><a href="#transportation">Transportation</a></li>
+        <li><a href="#numbers">Numbers</a></li>
       </ul>
     </nav>
   </header>
-</body>
-</html>
 
+  <main>
+    <!-- COLORS -->
+    <section id="colors">
+      <h2>🎨 know your Colors</h2>
+      <p>Click a color to learn its name!</p>
+      <div id="colorGrid">
+        <div class="color-box" data-color="Red" style="background:red;"></div>
+        <div class="color-box" data-color="Blue" style="background:blue;"></div>
+        <div class="color-box" data-color="Yellow" style="background:yellow;"></div>
+        <div class="color-box" data-color="Green" style="background:green;"></div>
+        <div class="color-box" data-color="Purple" style="background:purple;"></div>
+        <div class="color-box" data-color="Orange" style="background:orange;"></div>
+        <div class="color-box" data-color="Pink" style="background:pink;"></div>
+        <div class="color-box" data-color="Brown" style="background:brown;"></div>
+        <div class="color-box" data-color="Black" style="background:black;"></div>
+        <div class="color-box" data-color="White" style="background:white; border:2px solid gray;"></div>
+      </div>
+      <p id="colorName"></p>
+    </section>
 
-    <script src="projects1_script.js"></script>
-    
+    <!-- ANIMALS -->
+    <section id="animals">
+      <h2>🐶 Learn Animals</h2>
+      <p>Click an animal to see it and hear its sound!</p>
+      <div class="animal-grid">
+        <div class="animal" data-animal="Dog" data-sound="https://www.soundjay.com/animal/dog-bark-1.mp3" data-img="https://placedog.net/200/200">Dog</div>
+        <div class="animal" data-animal="Cat" data-sound="https://www.soundjay.com/animal/cat-meow-2.mp3" data-img="https://placecats.com/200/200">Cat</div>
+        <div class="animal" data-animal="Cow" data-sound="https://www.soundjay.com/animal/cow-moo1.mp3" data-img="https://www.ucdavis.edu/sites/default/files/styles/sf_landscape_16x9/public/home-site/blogs/one-health/blog-posts/2018/cow-field-one-health-uc-davis.jpg?h=c74750f6&itok=S4gYdwS2">Cow</div>
+        <div class="animal" data-animal="Horse" data-sound="https://www.soundjay.com/animal/horse-neigh1.mp3" data-img="https://t3.ftcdn.net/jpg/04/58/21/76/360_F_458217616_ubt2TRfIDIvNHJkMqIlVlXmSqesYIpYW.jpg">Horse</div>
+      </div>
+      <img id="animalImage" alt="Animal picture">
+    </section>
+
+    <!-- SHAPES -->
+    <section id="shapes">
+      <h2>🔺 Learn Shapes</h2>
+      <p>Click a shape to learn its name!</p>
+      <div class="shapes">
+        <div class="shape" data-shape="Square"></div>
+        <div class="shape circle" data-shape="Circle"></div>
+        <div class="triangle" data-shape="Triangle"></div>
+        <div class="shape rectangle" data-shape="Rectangle"></div>
+        <div class="star" data-shape="Star"></div>
+        <div class="heart" data-shape="Heart"></div>
+        <div class="diamond" data-shape="Diamond"></div>
+        <div class="oval" data-shape="Oval"></div>
+      </div>
+      <p id="shapeName"></p>
+    </section>
+
+    <!-- NUMBERS -->
+    <section id="numbers">
+      <h2>🔢 Learn Numbers</h2>
+      <p>Click ⬅️ or ➡️ to learn numbers from 1 to 10!</p>
+
+      <div class="number-display" id="numberDisplay">1</div>
+      <p id="numberWord">One</p>
+
+      <div class="number-buttons">
+        <button class="nav-btn" id="prevNumber">⬅️</button>
+        <button class="nav-btn" id="nextNumber">➡️</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Pre-K Learning Fun | Designed and Coded by <strong>Ravishkar Premanand</strong> 💻✨</p>
+  </footer>
+
+  <button id="toTop">⬆ Top</button>
+
+  <script>
+    // Go to Top
+    const toTop = document.getElementById("toTop");
+    window.addEventListener("scroll", () => {
+      toTop.style.display = window.scrollY > 100 ? "block" : "none";
+    });
+    toTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Colors
+    document.querySelectorAll(".color-box").forEach(box => {
+      box.addEventListener("click", () => {
+        const color = box.dataset.color;
+        const colorName = document.getElementById("colorName");
+        colorName.textContent = `This is ${color}! 🎉`;
+        colorName.style.color = color.toLowerCase();
+      });
+    });
+
+    // Animals
+    const animalImage = document.getElementById("animalImage");
+    document.querySelectorAll(".animal").forEach(animal => {
+      animal.addEventListener("click", () => {
+        const sound = new Audio(animal.dataset.sound);
+        sound.play();
+        animalImage.src = animal.dataset.img;
+        animalImage.alt = animal.dataset.animal;
+        animalImage.style.display = "block";
+      });
+    });
+
+    // Shapes
+    document.querySelectorAll("[data-shape]").forEach(shape => {
+      shape.addEventListener("click", () => {
+        const shapeName = document.getElementById("shapeName");
+        shapeName.textContent = `This is a ${shape.dataset.shape}! 💫`;
+        shapeName.style.color = "#5d4037";
+      });
+    });
+
+    // Transportation
+    document.querySelectorAll(".vehicle").forEach(vehicle => {
+      vehicle.addEventListener("click", () => {
+        const sound = new Audio(vehicle.dataset.sound);
+        sound.play();
+      });
+    });
+  </script>
 </body>
 </html>
